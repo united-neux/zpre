@@ -20,7 +20,6 @@ ab.mesher_config['threads'] = 1
 ab.mesher_config['curve_samples'] = 50
 ab.mesher_config['angular_tolerance'] = 0.20
 ab.mesher_config['tolerance'] = 0.3
-exit()
 
 # output
 a=ab.Assembly()
