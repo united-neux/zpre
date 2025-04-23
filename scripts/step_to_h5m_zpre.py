@@ -1,16 +1,19 @@
 ###############################################################################
 # Converting step files to h5m file to be read by openmc
 ###############################################################################
-import numpy as np
 import os
+import numpy as np
 import CAD_to_OpenMC.assembly as ab
 ###############################################################################
 
 # inputs
 step_filepath = "./step_files/zpre.step"
-#step_filepath = "test_blocks.step"
-#step_filepath = "loop6.1_b26.6.step"
+compressed_path = step_filepath + ".gz"
 h5m_out_filepath = os.getcwd() + '/h5m_files/zpre.h5m'
+
+#uncompress if necessary
+if not os.path.exists(step_filepath):
+    os.system("gunzip -k " + compressed_path)
 
 # mesher config
 ab.mesher_config['mesh_algorithm'] = 2
@@ -18,6 +21,7 @@ ab.mesher_config['threads'] = 1
 ab.mesher_config['curve_samples'] = 50
 ab.mesher_config['angular_tolerance'] = 0.20
 ab.mesher_config['tolerance'] = 0.3
+exit()
 
 # output
 a=ab.Assembly()
