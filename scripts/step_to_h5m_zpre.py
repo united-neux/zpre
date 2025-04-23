@@ -2,7 +2,6 @@
 # Converting step files to h5m file to be read by openmc
 ###############################################################################
 import os
-import numpy as np
 import CAD_to_OpenMC.assembly as ab
 ###############################################################################
 
